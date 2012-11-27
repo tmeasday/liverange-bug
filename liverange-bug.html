@@ -1,0 +1,22 @@
+<head>
+  <title>liverange-bug</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <div>
+    {{#if post}}{{#constant}}{{#with post}}
+      <form class="grid-block form-horizontal">
+    
+        <select id="postUser">
+          {{#each users}}
+          <option {{#if isSelected}}selected{{/if}} value="{{_id}}">{{userName}}</option>
+          {{/each}}
+        </select>
+      </form>
+    {{/with}}{{/constant}}{{/if}}
+  </div>
+</template>
