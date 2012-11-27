@@ -6,12 +6,12 @@ if (Meteor.isClient) {
   }
   
   Template.hello.users = function() {
-    return [{_id: 'a', userName: 'tom'}, {_id: 'b', userName: '2'}];
+    return [{_id: 'c', userName: 'tom'}, {_id: 'b', userName: '2'}];
   }
   
   Template.hello.isSelected = function() {
     var post = Posts.findOne();
-    return this._id === post.userId;
+    return post && this._id === post.userId;
   }
   
   Meteor.startup(function() {
